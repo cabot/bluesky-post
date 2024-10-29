@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Demo of bluesky-post Web Component" />
+    <title>bluesky-post Web Component Demo</title>
+
+    <style>
+      bluesky-post {
+        font-family: system-ui;
+      }
+
+      bluesky-post[template="custom-template"]:defined a:not([data-key]) {
+        display: none;
+      }
+
+      bluesky-post dl {
+        display: flex;
+        gap: 1rem;
+      }
+
+      bluesky-post dl {
+        gap: 0.25rem;
+      }
+
+      bluesky-post dt ~ dt {
+        margin-inline-start: 1rem;
+      }
+
+      bluesky-post dd {
+        margin-inline-start: 0;
+      }
+
+      bluesky-post img {
+        max-inline-size: 1.25rem;
+        vertical-align: middle;
+        border-radius: 100%;
+      }
+    </style>
+
+    <script type="module" src="bluesky-post.js"></script>
+  </head>
+  <body>
+    <h2>Custom template example</h2>
+
+    <template id="bluesky-post-template">
+      <dl>
+        <dt>Reposts</dt>
+        <dd data-key="repostCount"></dd>
+        <dt>Replies</dt>
+        <dd data-key="replyCount"></dd>
+        <dt>Likes</dt>
+        <dd data-key="likeCount"></dd>
+      </dl>
+    </template>
+
+    <bluesky-post>
+      <a href="https://bsky.app/profile/darn.es/post/3l77dvshl6z2f">
+        Discuss on Bluesky
+      </a>
+    </bluesky-post>
+
+    <h2>Custom template example using <code>template</code> attribute</h2>
+
+    <template id="custom-template">
+      <a data-key="record.text, url"></a>
+    </template>
+
+    <bluesky-post template="custom-template">
+      <a href="https://bsky.app/profile/darn.es/post/3l7m6ivb6ha2q">
+        Discuss on Bluesky
+      </a>
+    </bluesky-post>
+  </body>
+</html>
