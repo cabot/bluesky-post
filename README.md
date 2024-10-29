@@ -42,16 +42,14 @@ Example using a more complex custom template:
 <template id="bluesky-post-template">
   <dl>
     <dt>Reposts</dt>
-    <dd data-key="reblogs_count"></dd>
+    <dd data-key="repostCount"></dd>
     <dt>Replies</dt>
-    <dd data-key="replies_count"></dd>
-    <dt>Favourites</dt>
-    <dd data-key="favourites_count"></dd>
+    <dd data-key="replyCount"></dd>
+    <dt>Likes</dt>
+    <dd data-key="likeCount"></dd>
   </dl>
   <a data-key="url">
-    View original post from <img alt="avatar" data-key="account.avatar" />
-    <strong data-key="account.display_name"></strong> on
-    <strong data-key="hostname"></strong>
+    View original post from <strong data-key="username"></strong> on <strong data-key="hostname"></strong>
   </a>
 </template>
 
